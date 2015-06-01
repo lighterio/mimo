@@ -1,6 +1,5 @@
 var fs = require('fs');
 var run = require('./common/process/run');
-var icons = require('./lib/icons');
 
 var mimo = module.exports = {
 
