@@ -7,30 +7,30 @@
  * @version 0.0.1
  */
 
-var spawn = require('child_process').spawn;
+var spawn = require('child_process').spawn
 
 module.exports = function (command, cwd, env) {
-  var args = command.split(' ');
+  var args = command.split(' ')
   for (var i = 0, n = args.length - 1; i < n; i++) {
-    if (args[i].substr(-1) == '\\') {
-      args.splice(i, 2, args[i] + args[i + 1]);
+    if (args[i].substr(-1) === '\\') {
+      args.splice(i, 2, args[i] + args[i + 1])
     }
   }
 
-  cwd = cwd || process.cwd();
-  env = env || process.env;
+  cwd = cwd || process.cwd()
+  env = env || process.env
 
-  var execPath = args.shift();
-  var child = spawn(execPath, args, {cwd: cwd, env: env});
-  var data = '';
+  var execPath = args.shift()
+  var child = spawn(execPath, args, {cwd: cwd, env: env})
+  var data = ''
 
   child.stdout.on('data', function (chunk) {
-    data += chunk;
-  });
+    data += chunk
+  })
 
   child.on('close', function (code) {
     if (code > 0) {
-      var error = new Error('Command `' + command + '` returned exit code ' + code + '.');
+      var error = new Error('Command `' + command + '` returned exit code ' + code + '.')
       error.details = {
         execPath: execPath,
         args: args,
@@ -38,14 +38,13 @@ module.exports = function (command, cwd, env) {
         env: env,
         code: code,
         data: data
-      };
-      child.emit('error', error);
+      }
+      child.emit('error', error)
+    } else {
+      child.emit('ok', data)
     }
-    else {
-      child.emit('ok', data);
-    }
-  });
+  })
 
-  return child;
+  return child
 
-};
+}
