@@ -21,7 +21,9 @@ module.exports = function (command, cwd, env) {
   env = env || process.env
 
   var execPath = args.shift()
-  var child = spawn(execPath, args, {cwd: cwd, env: env})
+  var opts = {cwd: cwd, env: env}
+  var child = spawn(execPath, args, opts)
+
   var data = ''
 
   child.stdout.on('data', function (chunk) {
