@@ -15,7 +15,7 @@ if (process.mainModule === module) {
 
 var fs = require('fs')
 var run = require('./common/process/run')
-var icons = require('./lib/icons')
+//var icons = require('./lib/icons')
 
 var mimo = module.exports = {
 
@@ -49,13 +49,14 @@ var mimo = module.exports = {
     var app = mimo.app
     if (app.chug) {
 
-      var js = (app.href ? "window._href='" + app.href + "';" : '')
-        + "window._platform = 'MIMO_PLATFORM';"
-        + mimo.code.ui + ';'
-        + mimo.code.views + ';'
-        + "Porta.viewName='index';"
-        + "Porta.view=Porta.views[Porta.viewName];"
-        + "Porta.state={};"
+      var js = '\n'
+        + (app.href ? "window._href='" + app.href + "'\n" : '')
+        + "window._platform = 'MIMO_PLATFORM'\n"
+        + mimo.code.ui + '\n'
+        + mimo.code.views + '\n'
+        + "Porta.viewName='events/edit'\n"
+        + "Porta.view=Porta.views[Porta.viewName]\n"
+        + "Porta.state={}\n"
         + "document.write(Porta.view.call(Porta.views,Porta.state))"
 
       var asset = new app.chug.Asset('/m.js')
@@ -71,9 +72,12 @@ var mimo = module.exports = {
             .minify()
         }
 
-      var html = '<html lang="en"><head><meta charset="UTF-8"/><script>'
+      var html = '<html lang="en"><head><meta charset="UTF-8"/>'
+        + '<script>'
         + asset.getMinifiedContent().replace(/<\/script>/g, '<\\/script>')
-        + '</script></head></html>'
+        + '</script>'
+        + '<script src="http://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>'
+        + '</head></html>'
 
       var wait = mimo.platforms.length
       mimo.platforms.forEach(function (platform) {

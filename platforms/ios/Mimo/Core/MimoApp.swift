@@ -1,13 +1,13 @@
 import Foundation
 import UIKit
 
-@UIApplicationMain
 class MimoApp: UIResponder, UIApplicationDelegate {
 
   var window: UIWindow?
   var view: MimoView?
   var listeners = [String: [Any]]()
   var plugins = [MimoPlugin]()
+  var coreLocationController:MimoGeo?
 
   /**
    * When a Mimo application launches, load its view and plugins.
@@ -17,25 +17,27 @@ class MimoApp: UIResponder, UIApplicationDelegate {
     // Save a reference to the ViewController.
     view = window!.rootViewController as? MimoView
 
-    MimoContacts()
+    // Load the application's plugins.
+    loadPlugins()
 
     return true
   }
 
+  /**
+   * Override to load plugins.
+   */
+  func loadPlugins() {
+  }
+
+  /**
+   *
+   */
   func applicationDidBecomeActive(application: UIApplication) {
-    view!.eval("Mimo.emit('active')")
-  }
-
-  func applicationDidEnterBackground(application: UIApplication) {
-    view!.eval("Mimo.emit('pause')")
-  }
-
-  func applicationWillEnterForeground(application: UIApplication) {
-    view!.eval("Mimo.emit('resume')")
+    view!.eval("Mimo.emit('focus')")
   }
 
   func applicationWillResignActive(application: UIApplication) {
-    view!.eval("Mimo.emit('inactive')")
+    view!.eval("Mimo.emit('blur')")
   }
 
   func on (event: String, _ listener: (String) -> Void) {

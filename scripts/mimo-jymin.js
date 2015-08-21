@@ -2,9 +2,10 @@
  * This file is used in conjunction with Jymin to form the Mimo front-end.
  *
  * @use jymin/jymin.js
+ * @use porta/scripts/porta-jymin.js
  */
 
-var Mimo = {}
+var Mimo = window.Mimo = {}
 
 Mimo.n = 0
 
@@ -30,30 +31,15 @@ Mimo.get = function (key, fn) {
 }
 
 Mimo.on = function (type, fn) {
-  Jymin.on(Mimo, type, fn)
+  Jymin.on(Mimo, type, function (element, event, type) {
+    fn(event.data, event, type)
+  })
 }
 
 Mimo.emit = function (type, data) {
   Jymin.trigger(Mimo, {type: type, data: data})
 }
 
-Mimo.on('pause', function () {
-  Beams.log('pause')
-})
-
-Mimo.on('resume', function () {
-  Beams.log('resume')
-})
-
-Mimo.on('active', function () {
-  Beams.log('active')
-})
-
-Mimo.on('inactive', function () {
-  Beams.log('inactive')
-})
-
-
 var mimoArea = Jymin.getViewport()
-var mimoScale = Math.round(Math.min(mimoArea[0] * 0.8, mimoArea[1]) / 180) / 2
+var mimoScale = Math.round(Math.min(mimoArea[0], mimoArea[1]) / 240) / 2
 window._scale = Math.max(1, Math.min(2.5, mimoScale))

@@ -4,21 +4,22 @@
  * property.
  *
  * @origin https://github.com/lighterio/lighter-common/common/process/run.js
- * @version 0.0.1
+ * @version 0.0.2
  */
 
 var spawn = require('child_process').spawn
 
 module.exports = function (command, cwd, env) {
+
+  cwd = cwd || process.cwd()
+  env = env || process.env
+
   var args = command.split(' ')
   for (var i = 0, n = args.length - 1; i < n; i++) {
     if (args[i].substr(-1) === '\\') {
       args.splice(i, 2, args[i] + args[i + 1])
     }
   }
-
-  cwd = cwd || process.cwd()
-  env = env || process.env
 
   var execPath = args.shift()
   var opts = {cwd: cwd, env: env}

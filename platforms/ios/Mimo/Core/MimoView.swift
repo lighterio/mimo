@@ -17,7 +17,7 @@ class MimoView: UIViewController, UIWebViewDelegate {
     let request = NSURLRequest(URL: url!)
     webView.delegate = self
     webView.gestureRecognizers?.removeAll(keepCapacity: false)
-    webView.scrollView.bounces = false;
+    webView.scrollView.bounces = false
     webView.loadRequest(request)
   }
 

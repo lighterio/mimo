@@ -1,6 +1,6 @@
 import UIKit
 
-class MimoPlugin {
+class MimoPlugin: NSObject {
 
   var app = UIApplication.sharedApplication().delegate as! MimoApp
 
