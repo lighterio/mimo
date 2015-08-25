@@ -4,8 +4,8 @@
   "description": "A minimalistic mobile build tool",
   "dependencies": {},
   "devDependencies": {
-    "exam": "^1.0.0",
-    "jymin": "^1.0.0"
+    "exam": "git+https://github.com/zerious/exam.git",
+    "jymin": "git+https://github.com/zerious/jymin.git"
   },
   "keywords": [
     "mimo",

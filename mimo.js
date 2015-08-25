@@ -43,6 +43,15 @@ var mimo = module.exports = {
         })
       })
     }
+    if (app.beams) {
+      app.beams.on('mimo:platform', function (platform, client) {
+        client.platform = platform
+      })
+      app.get('/m.html', function (request, response) {
+        var platform = request.query.p
+        response.end(mimo[platform])
+      })
+    }
   },
 
   build: function () {
@@ -58,6 +67,9 @@ var mimo = module.exports = {
         + "Porta.view=Porta.views[Porta.viewName]\n"
         + "Porta.state={}\n"
         + "document.write(Porta.view.call(Porta.views,Porta.state))"
+
+      //app.log('ui: ' + mimo.code.ui.length)
+      //app.log('views: ' + mimo.code.views.length)
 
       var asset = new app.chug.Asset('/m.js')
         asset.setContent(js)
@@ -84,6 +96,20 @@ var mimo = module.exports = {
         var dir = platform + (platform == 'ios' ? '' : '/assets')
         var path = mimo.dir + '/platforms/' + dir + '/m.html'
         var code = html.replace('MIMO_PLATFORM', platform)
+
+        // In development mode, send new code to connected clients.
+        /*
+        if (app.isDev && app.beams) {
+          mimo[platform] = code
+          app.beams.each(function (client) {
+            if (client.platform === platform) {
+              app.log('Sending to ' + platform + ' client ' + client.id + '.')
+              client.emit('mimo:html', code)
+            }
+          })
+        }
+        */
+
         fs.writeFile(path, code, function (error) {
           if (!--wait) {
             app.log.info('[Mimo] Mobile app written to ' + 'm.html'.cyan + '.')
@@ -98,12 +124,13 @@ var mimo = module.exports = {
 
   deploy: function () {
     var app = mimo.app
-    if (app.chug) {
+    if (app.chug /*&& !mimo.deployed*/) {
       var deployments = app.mimoDeployments || []
       deployments.forEach(function (deployment) {
         run(deployment.command)
       })
     }
+    mimo.deployed = Date.now()
   }
 
 }
