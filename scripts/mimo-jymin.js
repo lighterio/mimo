@@ -55,9 +55,7 @@ Mimo.get = function (command, fn) {
  * @param  {Function} fn    Function to be called when the event occurs.
  */
 Mimo.on = function (type, fn) {
-  Jymin.on(Mimo, type, function (element, event, type) {
-    fn(event.data, event, type)
-  })
+  Jymin.on(Mimo, type, fn)
 }
 
 /**
@@ -67,7 +65,7 @@ Mimo.on = function (type, fn) {
  * @param  {Object} data  Event data to send.
  */
 Mimo.emit = function (type, data) {
-  Jymin.trigger(Mimo, {type: type, data: data})
+  Jymin.emit(type, Mimo, data)
 }
 
 // Calculate how much we should zoom in for larger screens.
@@ -77,17 +75,17 @@ window._zoom = Math.max(1, Math.min(2.5, mimoZoom))
 
 // Before the app unloads, let the page unload.
 Mimo.on('unload', function () {
-  Jymin.trigger(window, 'beforeunload')
+  Jymin.emit('beforeunload', window)
 })
 
 // When the app returns from background, mimic window focus.
 Mimo.on('resume', function () {
-  Jymin.trigger(window, 'focus')
+  Jymin.emit('focus', window)
 })
 
 // When the app goes to background, mimic window blur.
 Mimo.on('pause', function () {
-  Jymin.trigger(window, 'blur')
+  Jymin.emit('blur', window)
 })
 
 // When we connect to the server, report this app's platform to it.
@@ -97,13 +95,13 @@ Beams.on('connect', function () {
 
 // When the server has a new url, load it.
 Beams.on('mimo:load', function (url) {
-  Jymin.trigger(window, 'beforeunload')
+  Jymin.emit('beforeunload', window)
   window.location = url
 })
 
 // When the server has new html, load it.
 Beams.on('mimo:html', function (html) {
-  Jymin.trigger(window, 'beforeunload')
+  Jymin.emit('beforeunload', window)
   Beams.log(html.length)
   window.localStorage.setItem('x.html', html)
   Mimo.get('html')
