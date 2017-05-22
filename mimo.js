@@ -71,7 +71,7 @@ var mimo = module.exports = {
       var asset = new app.chug.Asset('/m.js')
         asset.setContent(js)
         if (!app.isDev) {
-          asset.replace(/(\n?)(Jymin|Beams|Porta)\.([$_a-zA-Z0-9]+)(\s*=)?/g,
+          asset.replace(/(\n?)(Cute|Beams|Porta)\.([$_a-zA-Z0-9]+)(\s*=)?/g,
             function (match, br, lib, key, equals) {
               var name = lib + '_' + key
               var word = br ? 'var ' : ''
@@ -135,4 +135,4 @@ var mimo = module.exports = {
 /**
  * Expose the path to Mimo's front-end script.
  */
-mimo.jymin = __dirname + '/scripts/mimo-jymin.js'
+mimo.cute = __dirname + '/scripts/mimo-cute.js'

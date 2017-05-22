@@ -1,11 +1,11 @@
 /**
  * Mimo communicates with Java/Swift via MimoApp, which loads the front-end into a webview.
- * - Jymin is used for eventing.
+ * - Cute is used for eventing.
  * - Beams is used for client-sever communication.
  *
- * @use jymin/jymin.js
- * @use beams/scripts/beams-jymin.js
- * @//use porta/scripts/porta-jymin.js
+ * @use cute/cute.js
+ * @use beams/scripts/beams-cute.js
+ * @//use porta/scripts/porta-cute.js
  */
 
 // Expose Mimo at the window level so MimoApp can emit events to it.
@@ -40,7 +40,7 @@ Mimo.get = function (command, fn) {
     var href = location.href.replace(/(#.*)?$/, '#' + commandCount)
     Mimo.commandQueue.push(command + '/' + commandCount)
     if (fn) {
-      Jymin.once(Mimo, command + commandCount, fn)
+      Cute.once(Mimo, command + commandCount, fn)
     }
     window.location = href
   }
@@ -53,7 +53,7 @@ Mimo.get = function (command, fn) {
  * @param  {Function} fn    Function to be called when the event occurs.
  */
 Mimo.on = function (type, fn) {
-  Jymin.on(Mimo, type, fn)
+  Cute.on(Mimo, type, fn)
 }
 
 /**
@@ -63,27 +63,27 @@ Mimo.on = function (type, fn) {
  * @param  {Object} data  Event data to send.
  */
 Mimo.emit = function (type, data) {
-  Jymin.emit(type, Mimo, data)
+  Cute.emit(type, Mimo, data)
 }
 
 // Calculate how much we should zoom in for larger screens.
-var mimoArea = Jymin.getViewport()
+var mimoArea = Cute.getViewport()
 var mimoZoom = Math.round(Math.min(mimoArea[0], mimoArea[1]) / 240) / 2
 window._zoom = Math.max(1, Math.min(2.5, mimoZoom))
 
 // Before the app unloads, let the page unload.
 Mimo.on('unload', function () {
-  Jymin.emit('beforeunload', window)
+  Cute.emit('beforeunload', window)
 })
 
 // When the app returns from background, mimic window focus.
 Mimo.on('resume', function () {
-  Jymin.emit('focus', window)
+  Cute.emit('focus', window)
 })
 
 // When the app goes to background, mimic window blur.
 Mimo.on('pause', function () {
-  Jymin.emit('blur', window)
+  Cute.emit('blur', window)
 })
 
 // When we connect to the server, report this app's platform to it.
@@ -93,14 +93,14 @@ Beams.on('connect', function () {
 
 // When the server has a new url, load it.
 Beams.on('mimo:load', function (url) {
-  Jymin.emit('beforeunload', window)
+  Cute.emit('beforeunload', window)
   window.location = url
 })
 
 // When the server has new html, load it.
 Beams.on('mimo:html', function (html) {
-  Jymin.emit('beforeunload', window)
+  Cute.emit('beforeunload', window)
   Beams.log(html.length)
-  Jymin.persist('x.html', html)
+  Cute.persist('x.html', html)
   Mimo.get('html')
 })
