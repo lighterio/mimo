@@ -85,6 +85,7 @@ class MimoContacts: MimoPlugin {
       if var photo = ABPersonCopyImageDataWithFormat(record, kABPersonImageFormatThumbnail)?.takeRetainedValue() {
         var image = UIImage(data: photo)
         var id = ABRecordGetRecordID(record)
+        fields["id"] = id.description
         var path = temp + "contact" + id.description + ".jpg"
         fields["photo"] = path
 

@@ -1,0 +1,324 @@
+// !$*UTF8*$!
+{
+  archiveVersion = 1;
+  classes = {
+  };
+  objectVersion = 46;
+  objects = {
+
+/* Begin PBXBuildFile section */
+    223F29441B163E7300DAA5CB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 223F29431B163E7300DAA5CB /* AppDelegate.swift */; };
+    223F298A1B16614900DAA5CB /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 223F29651B1642F800DAA5CB /* Default-568h@2x.png */; };
+    2248C4F11B445F5600C1B27B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2248C4EF1B445F5600C1B27B /* Images.xcassets */; };
+    2248C4FA1B44603700C1B27B /* m.html in Resources */ = {isa = PBXBuildFile; fileRef = 2248C4F91B44603700C1B27B /* m.html */; };
+    2248C4FF1B44607E00C1B27B /* Mimo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2248C4FB1B44607E00C1B27B /* Mimo.storyboard */; };
+    2248C5001B44607E00C1B27B /* MimoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2248C4FC1B44607E00C1B27B /* MimoApp.swift */; };
+    2248C5021B44607E00C1B27B /* MimoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2248C4FE1B44607E00C1B27B /* MimoView.swift */; };
+    2248C5041B44608F00C1B27B /* MimoContacts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2248C5031B44608F00C1B27B /* MimoContacts.swift */; };
+    2248C5061B4461EC00C1B27B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2248C5051B4461EC00C1B27B /* ViewController.swift */; };
+    2272C2911B49FB5900AC037C /* MimoPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2272C2901B49FB5900AC037C /* MimoPlugin.swift */; };
+    22E9D1551B7A3FBC00B372A7 /* MimoGeo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E9D1541B7A3FBC00B372A7 /* MimoGeo.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+    223F293E1B163E7300DAA5CB /* Goin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Goin.app; sourceTree = BUILT_PRODUCTS_DIR; };
+    223F29431B163E7300DAA5CB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+    223F29651B1642F800DAA5CB /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+    2248C4EF1B445F5600C1B27B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+    2248C4F01B445F5600C1B27B /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+    2248C4F91B44603700C1B27B /* m.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = m.html; sourceTree = "<group>"; };
+    2248C4FB1B44607E00C1B27B /* Mimo.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Mimo.storyboard; path = Mimo/Core/Mimo.storyboard; sourceTree = "<group>"; };
+    2248C4FC1B44607E00C1B27B /* MimoApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MimoApp.swift; path = Mimo/Core/MimoApp.swift; sourceTree = "<group>"; };
+    2248C4FE1B44607E00C1B27B /* MimoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MimoView.swift; path = Mimo/Core/MimoView.swift; sourceTree = "<group>"; };
+    2248C5031B44608F00C1B27B /* MimoContacts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MimoContacts.swift; path = "Mimo/Plugins/MimoContacts.swift"; sourceTree = "<group>"; };
+    2248C5051B4461EC00C1B27B /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+    2272C2901B49FB5900AC037C /* MimoPlugin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MimoPlugin.swift; path = Mimo/Core/MimoPlugin.swift; sourceTree = "<group>"; };
+    22E9D1541B7A3FBC00B372A7 /* MimoGeo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MimoGeo.swift; path = Mimo/Plugins/MimoGeo.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+    223F293B1B163E7300DAA5CB /* Frameworks */ = {
+      isa = PBXFrameworksBuildPhase;
+      buildActionMask = 2147483647;
+      files = (
+      );
+      runOnlyForDeploymentPostprocessing = 0;
+    };
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+    223F29351B163E7300DAA5CB = {
+      isa = PBXGroup;
+      children = (
+        223F29401B163E7300DAA5CB /* Goin */,
+        2248C4F51B445FCC00C1B27B /* Mimo */,
+        223F293F1B163E7300DAA5CB /* Products */,
+        223F29651B1642F800DAA5CB /* Default-568h@2x.png */,
+        2248C4F91B44603700C1B27B /* m.html */,
+      );
+      sourceTree = "<group>";
+    };
+    223F293F1B163E7300DAA5CB /* Products */ = {
+      isa = PBXGroup;
+      children = (
+        223F293E1B163E7300DAA5CB /* Goin.app */,
+      );
+      name = Products;
+      sourceTree = "<group>";
+    };
+    223F29401B163E7300DAA5CB /* Goin */ = {
+      isa = PBXGroup;
+      children = (
+        223F29431B163E7300DAA5CB /* AppDelegate.swift */,
+        2248C4EF1B445F5600C1B27B /* Images.xcassets */,
+        2248C4F01B445F5600C1B27B /* Info.plist */,
+        2248C5051B4461EC00C1B27B /* ViewController.swift */,
+      );
+      path = Goin;
+      sourceTree = "<group>";
+    };
+    2248C4F51B445FCC00C1B27B /* Mimo */ = {
+      isa = PBXGroup;
+      children = (
+        2248C4F71B44600D00C1B27B /* Plugins */,
+        2248C4F61B445FFD00C1B27B /* Core */,
+      );
+      name = Mimo;
+      sourceTree = "<group>";
+    };
+    2248C4F61B445FFD00C1B27B /* Core */ = {
+      isa = PBXGroup;
+      children = (
+        2248C4FB1B44607E00C1B27B /* Mimo.storyboard */,
+        2248C4FC1B44607E00C1B27B /* MimoApp.swift */,
+        2272C2901B49FB5900AC037C /* MimoPlugin.swift */,
+        2248C4FE1B44607E00C1B27B /* MimoView.swift */,
+      );
+      name = Core;
+      sourceTree = "<group>";
+    };
+    2248C4F71B44600D00C1B27B /* Plugins */ = {
+      isa = PBXGroup;
+      children = (
+        2248C5031B44608F00C1B27B /* MimoContacts.swift */,
+        22E9D1541B7A3FBC00B372A7 /* MimoGeo.swift */,
+      );
+      name = Plugins;
+      sourceTree = "<group>";
+    };
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+    223F293D1B163E7300DAA5CB /* Goin */ = {
+      isa = PBXNativeTarget;
+      buildConfigurationList = 223F295D1B163E7300DAA5CB /* Build configuration list for PBXNativeTarget "Goin" */;
+      buildPhases = (
+        223F293A1B163E7300DAA5CB /* Sources */,
+        223F293B1B163E7300DAA5CB /* Frameworks */,
+        223F293C1B163E7300DAA5CB /* Resources */,
+      );
+      buildRules = (
+      );
+      dependencies = (
+      );
+      name = Goin;
+      productName = Goin;
+      productReference = 223F293E1B163E7300DAA5CB /* Goin.app */;
+      productType = "com.apple.product-type.application";
+    };
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+    223F29361B163E7300DAA5CB /* Project object */ = {
+      isa = PBXProject;
+      attributes = {
+        LastUpgradeCheck = 0640;
+        ORGANIZATIONNAME = "Goin’ Inc.";
+        TargetAttributes = {
+          223F293D1B163E7300DAA5CB = {
+            CreatedOnToolsVersion = 6.3.2;
+            DevelopmentTeam = QYL9D43S4T;
+          };
+        };
+      };
+      buildConfigurationList = 223F29391B163E7300DAA5CB /* Build configuration list for PBXProject "Goin" */;
+      compatibilityVersion = "Xcode 3.2";
+      developmentRegion = English;
+      hasScannedForEncodings = 0;
+      knownRegions = (
+        en,
+        Base,
+      );
+      mainGroup = 223F29351B163E7300DAA5CB;
+      productRefGroup = 223F293F1B163E7300DAA5CB /* Products */;
+      projectDirPath = "";
+      projectRoot = "";
+      targets = (
+        223F293D1B163E7300DAA5CB /* Goin */,
+      );
+    };
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+    223F293C1B163E7300DAA5CB /* Resources */ = {
+      isa = PBXResourcesBuildPhase;
+      buildActionMask = 2147483647;
+      files = (
+        223F298A1B16614900DAA5CB /* Default-568h@2x.png in Resources */,
+        2248C4F11B445F5600C1B27B /* Images.xcassets in Resources */,
+        2248C4FF1B44607E00C1B27B /* Mimo.storyboard in Resources */,
+        2248C4FA1B44603700C1B27B /* m.html in Resources */,
+      );
+      runOnlyForDeploymentPostprocessing = 0;
+    };
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+    223F293A1B163E7300DAA5CB /* Sources */ = {
+      isa = PBXSourcesBuildPhase;
+      buildActionMask = 2147483647;
+      files = (
+        2272C2911B49FB5900AC037C /* MimoPlugin.swift in Sources */,
+        22E9D1551B7A3FBC00B372A7 /* MimoGeo.swift in Sources */,
+        2248C5061B4461EC00C1B27B /* ViewController.swift in Sources */,
+        223F29441B163E7300DAA5CB /* AppDelegate.swift in Sources */,
+        2248C5001B44607E00C1B27B /* MimoApp.swift in Sources */,
+        2248C5021B44607E00C1B27B /* MimoView.swift in Sources */,
+        2248C5041B44608F00C1B27B /* MimoContacts.swift in Sources */,
+      );
+      runOnlyForDeploymentPostprocessing = 0;
+    };
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+    223F295B1B163E7300DAA5CB /* Debug */ = {
+      isa = XCBuildConfiguration;
+      buildSettings = {
+        ALWAYS_SEARCH_USER_PATHS = NO;
+        CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+        CLANG_CXX_LIBRARY = "libc++";
+        CLANG_ENABLE_MODULES = YES;
+        CLANG_ENABLE_OBJC_ARC = YES;
+        CLANG_WARN_BOOL_CONVERSION = YES;
+        CLANG_WARN_CONSTANT_CONVERSION = YES;
+        CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+        CLANG_WARN_EMPTY_BODY = YES;
+        CLANG_WARN_ENUM_CONVERSION = YES;
+        CLANG_WARN_INT_CONVERSION = YES;
+        CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+        CLANG_WARN_UNREACHABLE_CODE = YES;
+        CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+        "CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Samuel D Eubank (GLJGAC9E4F)";
+        COPY_PHASE_STRIP = NO;
+        DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+        ENABLE_STRICT_OBJC_MSGSEND = YES;
+        GCC_C_LANGUAGE_STANDARD = gnu99;
+        GCC_DYNAMIC_NO_PIC = NO;
+        GCC_NO_COMMON_BLOCKS = YES;
+        GCC_OPTIMIZATION_LEVEL = 0;
+        GCC_PREPROCESSOR_DEFINITIONS = (
+          "DEBUG=1",
+          "$(inherited)",
+        );
+        GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+        GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+        GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+        GCC_WARN_UNDECLARED_SELECTOR = YES;
+        GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+        GCC_WARN_UNUSED_FUNCTION = YES;
+        GCC_WARN_UNUSED_VARIABLE = YES;
+        IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+        MTL_ENABLE_DEBUG_INFO = YES;
+        ONLY_ACTIVE_ARCH = YES;
+        SDKROOT = iphoneos;
+        SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+        TARGETED_DEVICE_FAMILY = "1,2";
+      };
+      name = Debug;
+    };
+    223F295C1B163E7300DAA5CB /* Release */ = {
+      isa = XCBuildConfiguration;
+      buildSettings = {
+        ALWAYS_SEARCH_USER_PATHS = NO;
+        CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+        CLANG_CXX_LIBRARY = "libc++";
+        CLANG_ENABLE_MODULES = YES;
+        CLANG_ENABLE_OBJC_ARC = YES;
+        CLANG_WARN_BOOL_CONVERSION = YES;
+        CLANG_WARN_CONSTANT_CONVERSION = YES;
+        CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+        CLANG_WARN_EMPTY_BODY = YES;
+        CLANG_WARN_ENUM_CONVERSION = YES;
+        CLANG_WARN_INT_CONVERSION = YES;
+        CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+        CLANG_WARN_UNREACHABLE_CODE = YES;
+        CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+        "CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Samuel D Eubank (GLJGAC9E4F)";
+        COPY_PHASE_STRIP = NO;
+        DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+        ENABLE_NS_ASSERTIONS = NO;
+        ENABLE_STRICT_OBJC_MSGSEND = YES;
+        GCC_C_LANGUAGE_STANDARD = gnu99;
+        GCC_NO_COMMON_BLOCKS = YES;
+        GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+        GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+        GCC_WARN_UNDECLARED_SELECTOR = YES;
+        GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+        GCC_WARN_UNUSED_FUNCTION = YES;
+        GCC_WARN_UNUSED_VARIABLE = YES;
+        IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+        MTL_ENABLE_DEBUG_INFO = NO;
+        ONLY_ACTIVE_ARCH = NO;
+        SDKROOT = iphoneos;
+        TARGETED_DEVICE_FAMILY = "1,2";
+        VALIDATE_PRODUCT = YES;
+      };
+      name = Release;
+    };
+    223F295E1B163E7300DAA5CB /* Debug */ = {
+      isa = XCBuildConfiguration;
+      buildSettings = {
+        ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+        CODE_SIGN_IDENTITY = "iPhone Developer";
+        INFOPLIST_FILE = Goin/Info.plist;
+        LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+        PRODUCT_NAME = Goin;
+      };
+      name = Debug;
+    };
+    223F295F1B163E7300DAA5CB /* Release */ = {
+      isa = XCBuildConfiguration;
+      buildSettings = {
+        ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+        CODE_SIGN_IDENTITY = "iPhone Developer";
+        INFOPLIST_FILE = Goin/Info.plist;
+        LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+        PRODUCT_NAME = Goin;
+      };
+      name = Release;
+    };
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+    223F29391B163E7300DAA5CB /* Build configuration list for PBXProject "Goin" */ = {
+      isa = XCConfigurationList;
+      buildConfigurations = (
+        223F295B1B163E7300DAA5CB /* Debug */,
+        223F295C1B163E7300DAA5CB /* Release */,
+      );
+      defaultConfigurationIsVisible = 0;
+      defaultConfigurationName = Release;
+    };
+    223F295D1B163E7300DAA5CB /* Build configuration list for PBXNativeTarget "Goin" */ = {
+      isa = XCConfigurationList;
+      buildConfigurations = (
+        223F295E1B163E7300DAA5CB /* Debug */,
+        223F295F1B163E7300DAA5CB /* Release */,
+      );
+      defaultConfigurationIsVisible = 0;
+      defaultConfigurationName = Release;
+    };
+/* End XCConfigurationList section */
+  };
+  rootObject = 223F29361B163E7300DAA5CB /* Project object */;
+}

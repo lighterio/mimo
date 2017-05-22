@@ -68,9 +68,6 @@ var mimo = module.exports = {
         + "Porta.state={}\n"
         + "document.write(Porta.view.call(Porta.views,Porta.state))"
 
-      //app.log('ui: ' + mimo.code.ui.length)
-      //app.log('views: ' + mimo.code.views.length)
-
       var asset = new app.chug.Asset('/m.js')
         asset.setContent(js)
         if (!app.isDev) {

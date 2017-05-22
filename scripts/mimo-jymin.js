@@ -40,9 +40,7 @@ Mimo.get = function (command, fn) {
     var href = location.href.replace(/(#.*)?$/, '#' + commandCount)
     Mimo.commandQueue.push(command + '/' + commandCount)
     if (fn) {
-      Jymin.once(Mimo, command + commandCount, function (element, event) {
-        fn(event.data)
-      })
+      Jymin.once(Mimo, command + commandCount, fn)
     }
     window.location = href
   }
@@ -103,6 +101,6 @@ Beams.on('mimo:load', function (url) {
 Beams.on('mimo:html', function (html) {
   Jymin.emit('beforeunload', window)
   Beams.log(html.length)
-  window.localStorage.setItem('x.html', html)
+  Jymin.persist('x.html', html)
   Mimo.get('html')
 })

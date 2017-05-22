@@ -24,22 +24,28 @@ class MimoApp: UIResponder, UIApplicationDelegate {
   }
 
   /**
-   * Override to load plugins.
+   * The app's AppDelegate must override loadPlugins to load its own.
    */
   func loadPlugins() {
   }
 
   /**
-   *
+   * When the app goes to background, emit a "pause" event to the frontend.
+   */
+  func applicationWillResignActive(application: UIApplication) {
+    view!.eval("Mimo.emit('pause')")
+  }
+
+  /**
+   * When the app returns to foreground, emit a "resume" event to the frontend.
    */
   func applicationDidBecomeActive(application: UIApplication) {
-    view!.eval("Mimo.emit('focus')")
+    view!.eval("Mimo.emit('resume')")
   }
 
-  func applicationWillResignActive(application: UIApplication) {
-    view!.eval("Mimo.emit('blur')")
-  }
-
+  /**
+   * Listen for events.
+   */
   func on (event: String, _ listener: (String) -> Void) {
     var listeners = self.listeners[event]
     if (listeners == nil) {
@@ -50,6 +56,9 @@ class MimoApp: UIResponder, UIApplicationDelegate {
     }
   }
 
+  /**
+   *
+   */
   func emit (event: String, _ callbackId: String) {
     if let listeners = self.listeners[event] {
       for listener in listeners {
