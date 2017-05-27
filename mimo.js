@@ -1,3 +1,4 @@
+var plans = require('plans')
 var read = require('fs').readFileSync
 var main = process.mainModule.filename
 
@@ -29,13 +30,19 @@ module.exports = function (options) {
 
   app.io.attach(app.server)
 
-  app.android = require('./lib/android').build()
-  // app.ios = require('./lib/ios').build()
-  require('./lib/icons')
   require('./lib/errors')
   require('./lib/load')
+  app.chug(['routes']).require()
 
-  app.chug(['controllers']).require()
+  plans.each([
+    require('./lib/icons').generate,
+    function () {
+      plans.all([
+        require('./lib/android').build,
+        // require('./lib/ios').build
+      ])
+    }
+  ])
 
   return app
 }

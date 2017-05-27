@@ -89,7 +89,7 @@ var mimo = module.exports = {
       var wait = mimo.platforms.length
       mimo.platforms.forEach(function (platform) {
         var dir = platform + (platform == 'ios' ? '' : '/assets')
-        var path = mimo.dir + '/platforms/' + dir + '/m.html'
+        var path = mimo.dir + '/' + dir + '/m.html'
         var code = html.replace('MIMO_PLATFORM', platform)
 
         // In development mode, send new code to connected clients.
