@@ -1,2 +1,0 @@
-class ViewController: MimoView {
-}

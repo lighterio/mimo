@@ -2,10 +2,28 @@
   "name": "mimo",
   "version": "0.1.1",
   "description": "A minimalistic mobile build tool.",
-  "dependencies": {},
+  "dependencies": {
+    "cedar": "0.3.2",
+    "chug": "0.4.2",
+    "cute": "0.0.5",
+    "express": "4.15.2",
+    "ip": "1.1.5",
+    "lighter-config": "1.1.0",
+    "lighter-json": "2.0.0",
+    "ltl": "0.3.1",
+    "mimo": "0.1.1",
+    "mysql": "2.13.0",
+    "passport": "0.3.2",
+    "passport-facebook": "2.1.1",
+    "passport-google": "0.3.0",
+    "passport-local": "1.0.0",
+    "passport-twitter": "1.0.4",
+    "sequelize": "3.30.4",
+    "sharp": "0.17.3",
+    "socket.io": "1.7.3"
+  },
   "devDependencies": {
-    "exam": "2.1.0",
-    "cute": "0.0.5"
+    "exam": "2.1.0"
   },
   "keywords": [
     "mimo",
