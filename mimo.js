@@ -6,43 +6,42 @@ require('lighter-json')
 
 module.exports = function (options) {
   var app = process.app = require('express')()
-  app.config = require('lighter-config')
-  app.log = require('cedar')(app.config.log)
+  var dir = app.dir = main.replace(/\/[^/]*$/, '')
+  var pkg = app.pkg = require(dir + '/package.json')
+  var config = app.config = require('lighter-config')
+  var log = app.log = require('cedar')(config.log)
+
+  app.title = pkg.title || pkg.name
+  app.sites = ['admin', 'app']
   app.chug = require('chug')
-
-  app.dir = main.replace(/\/[^/]*$/, '')
-  app.pkg = require(app.dir + '/package.json')
-  app.name = options.name || app.pkg.name
-
   app.db = require('./lib/db')
   app.io = new (require('socket.io'))()
 
   app.ip = require('ip').address()
-  app.port = app.config.port || 8443
+  app.port = config.port || 8443
   app.server = require('https').createServer({
-    key: read(app.dir + '/config/ssl.key'),
-    cert: read(app.dir + '/config/ssl.crt')
+    key: read(dir + '/config/ssl.key'),
+    cert: read(dir + '/config/ssl.crt')
   }, app)
 
   app.server.listen(app.port, function () {
-    app.log('Listening at ' + ('https://' + app.ip + ':' + app.port + '/').cyan)
+    log.info('Listening at ' + ('https://' + app.ip + ':' + app.port + '/').cyan)
   })
 
   app.io.attach(app.server)
 
   require('./lib/errors')
-  require('./lib/load')
-  app.chug(['routes']).require()
+  require('./lib/sites')
 
-  plans.each([
-    require('./lib/icons').generate,
-    function () {
-      plans.all([
-        require('./lib/android').build,
-        // require('./lib/ios').build
-      ])
-    }
-  ])
+  plans.all([
+    require('./lib/sites').load,
+    require('./lib/icons').generate
+  ]).then(function () {
+    plans.all([
+      require('./lib/android').build,
+      // require('./lib/ios').build
+    ])
+  })
 
   return app
 }

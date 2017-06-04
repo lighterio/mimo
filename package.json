@@ -12,6 +12,7 @@
     "lighter-json": "2.0.0",
     "ltl": "0.3.1",
     "mimo": "0.1.1",
+    "mkdirp": "0.5.1",
     "mysql": "2.13.0",
     "passport": "0.3.2",
     "passport-facebook": "2.1.1",
